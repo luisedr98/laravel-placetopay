@@ -7,13 +7,16 @@ use Illuminate\Support\Facades\Log;
 
 class PlaceToPayController extends Controller
 {
+
+    public CONST  BODY_ECOMMERCE = 'body_eb.json';
+    public CONST BODY_P2P = 'body.json';
     /**
      * Handle the incoming request.
      */
     public function __invoke()
     {
         try {
-            $body = $this->getOrderDetail('body.json');
+            $body = $this->getOrderDetail(self::BODY_ECOMMERCE);
             $placeToPay = $this->getPlaceToPayClient();
             $response = $placeToPay->request($body);
             if ($response->isSuccessful()) {

@@ -1,0 +1,43 @@
+{
+    "payment": {
+        "reference": "3627",
+        "amount": {
+            "taxes": [
+                {
+                    "kind": "valueAddedTax",
+                    "amount": 50.18,
+                    "base": 156.35
+                }
+            ],
+            "details": [
+                {
+                    "kind": "subtotal",
+                    "amount": 156.35
+                }
+            ],
+            "currency": "USD",
+            "total": 206.53
+        },
+        "allowPartial": false
+    },
+    "buyer": {
+        "name": "Luis",
+        "surname": "Dominguez",
+        "email": "payax56746@furnato.com",
+        "documentType": "CI",
+        "document": "2350464372",
+        "mobile": "0982011692",
+        "address": {
+            "street": "Calle 1 calle 0",
+            "city": "Guayaquil",
+            "country": "EC"
+        }
+    },
+    "locale": "es_EC",
+    "paymentMethod": null,
+    "expiration": "2024-10-25T10:42:24-05:00",
+    "returnUrl": "https://boschecuador.com/app.php",
+    "cancelUrl": "https://boschecuador.com/app.php",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0"
+}
