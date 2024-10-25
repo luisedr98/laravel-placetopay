@@ -1,0 +1,100 @@
+{
+    "locale": "es_EC",
+    "buyer": {
+        "name": "Luis",
+        "surname": "Dominguez",
+        "email": "luisdominguez818@gmail.com",
+        "documentType": "CC",
+        "document": "2350464372",
+        "mobile": "0982011692",
+        "address": {
+            "street": "2299 Cassin Vista",
+            "city": "West Katlynshire",
+            "state": "Antioquia",
+            "postalCode": "41919",
+            "country": "US",
+            "phone": "+1 (984) 513-7767"
+        }
+    },
+    "payment": {
+        "reference": "TEST_20241024_201715",
+        "description": "Accusantium dolor non facilis quia minus quaerat.",
+        "amount": {
+            "taxes": [
+                {
+                    "kind": "ice",
+                    "amount": 5.04
+                },
+                {
+                    "kind": "valueAddedTax",
+                    "amount": 7.98
+                }
+            ],
+            "details": [
+                {
+                    "kind": "shipping",
+                    "amount": 2.1
+                },
+                {
+                    "kind": "tip",
+                    "amount": 2.1
+                },
+                {
+                    "kind": "subtotal",
+                    "amount": 42
+                }
+            ],
+            "currency": "USD",
+            "total": 59.22
+        },
+        "items": [
+            {
+                "sku": 40286,
+                "name": "Minima sed.",
+                "category": "physical",
+                "qty": 1,
+                "price": 42,
+                "tax": 7.98
+            }
+        ],
+        "recurring_remove": {
+            "periodicity": "D",
+            "interval": 7,
+            "nextPayment": "2024-10-26",
+            "maxPeriods": 4
+        },
+        "shipping": {
+            "name": "Luis Dominguez",
+            "surname": "Littel",
+            "email": "luisdominguez818@gmail.com",
+            "documentType": "CC",
+            "document": "2350464372",
+            "mobile": "0982011692",
+            "address": {
+                "street": "2299 Cassin Vista",
+                "city": "West Katlynshire",
+                "state": "Antioquia",
+                "postalCode": "41919",
+                "country": "US",
+                "phone": "+1 (984) 513-7767"
+            }
+        },
+        "allowPartial": false
+    },
+    "expiration": "2024-10-25T20:17:15-05:00",
+    "ipAddress": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0",
+    "returnUrl" : "https://boschecuador.com/app.php",
+    "cancelUrl" : "https://boschecuador.com/app.php",
+    "skipResult": false,
+    "noBuyerFill": false,
+    "captureAddress": false,
+    "paymentMethod": null,
+    "fields": [
+        {
+            "keyword": "Redeem Code",
+            "value": 259912,
+            "displayOn": "payment"
+        }
+    ]
+}
