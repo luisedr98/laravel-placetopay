@@ -10,10 +10,9 @@ class PlaceToPayController extends Controller
 
     public CONST  BODY_ECOMMERCE = 'body_eb.json';
     public CONST BODY_P2P = 'body.json';
-    /**
-     * Handle the incoming request.
-     */
-    public function __invoke()
+
+
+    public function createSession()
     {
         try {
             $body = $this->getOrderDetail(self::BODY_ECOMMERCE);
@@ -21,7 +20,8 @@ class PlaceToPayController extends Controller
             $response = $placeToPay->request($body);
             if ($response->isSuccessful()) {
                 $processUrl = $response->processUrl();
-                return response()->json([ 'status' => true ,'placetopayUrl' => $processUrl ]);
+                $requestId = $response->requestId();
+                return response()->json([ 'status' => true ,'placetopayUrl' => $processUrl, 'requestId' => $requestId ]);
             } else {
                 Log::error('Error creating request', ['response' => $response->toArray()]);
                 return response()->json([ 'status' => false ,'error' => $response->toArray() ], 500);
@@ -54,4 +54,22 @@ class PlaceToPayController extends Controller
             'verifySsl' => false,
         ]);
     }
+    public function getInformationOfSession(string $requestId)
+    {
+        try {
+            $placeToPay = $this->getPlaceToPayClient();
+            $response = $placeToPay->query($requestId);
+            if ($response->isSuccessful()) {
+                return response()->json([ 'status' => true ,'response' => $response->toArray() ]);
+            } else {
+                Log::error('Error getting request', ['response' => $response->toArray()]);
+                return response()->json([ 'status' => false ,'error' => $response->toArray() ], 500);
+            }
+        } catch (\Throwable $th) {
+            Log::error('Error getStatusSession', ['error' => $th->getMessage(), 'line' => $th->getLine()]);
+            return response()->json([ 'status' => false ,'error' => $th->getMessage() ], 500);
+        }
+
+    }
+
 }
